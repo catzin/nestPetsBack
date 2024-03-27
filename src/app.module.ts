@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './shared/entities/index';
+import { Pet, ShelterEntity, User, ocupationEntity, shelterRequest } from './shared/entities/index';
 import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
@@ -16,7 +16,11 @@ import { AuthModule } from './modules/auth/auth.module';
       password:'',
       database:'petDB',
       entities:[
-        User
+        User,
+        ocupationEntity,
+        Pet,
+        shelterRequest,
+        ShelterEntity
       ],
       synchronize:true
 
