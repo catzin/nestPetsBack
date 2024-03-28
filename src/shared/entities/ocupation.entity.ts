@@ -4,14 +4,12 @@ import { User } from "./user.entity";
 @Entity('Ocupation')
 export class ocupationEntity{
 
-    @PrimaryGeneratedColumn('uuid')
-    idOcupation : string;
+    @PrimaryGeneratedColumn({type:'int'})
+    idOcupation : number;
     @Column()
     ocupation : string
 
     @OneToMany(() => User , user => user.ocupacion)
     usuarios :  User[]
-  
-
 
 }

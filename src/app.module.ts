@@ -2,8 +2,9 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Pet, ShelterEntity, User, ocupationEntity, shelterRequest } from './shared/entities/index';
+import { AdminUser, Pet, ShelterEntity, User, ocupationEntity, shelterRequest , Quality} from './shared/entities/index';
 import { AuthModule } from './modules/auth/auth.module';
+
 
 @Module({
   imports: [
@@ -20,7 +21,9 @@ import { AuthModule } from './modules/auth/auth.module';
         ocupationEntity,
         Pet,
         shelterRequest,
-        ShelterEntity
+        ShelterEntity,
+        AdminUser,
+        Quality
       ],
       synchronize:true
 

@@ -1,4 +1,5 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { User } from "./user.entity";
 
 @Entity('Shelter')
 export class ShelterEntity{
@@ -15,5 +16,8 @@ export class ShelterEntity{
     instaLink : string;
     @Column()
     webLink : string;
+    @OneToOne(()=> User)
+    @JoinColumn()
+    usuario : User;
 
 }

@@ -1,6 +1,8 @@
-import { Column, Entity, JoinColumn, JoinTable, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { ocupationEntity } from "./ocupation.entity";
 import { shelterRequest } from "./shelterRequest.entity";
+import { Pet } from "./pet.entity";
+import { ShelterEntity } from "./shelter.entity";
 
 @Entity()
 export class User{
@@ -18,21 +20,22 @@ export class User{
     email : string;
     @Column({length:128})
     password : string;
-    @Column()
-    refugio : boolean;
     @Column({length:12})
     fechaNacimiento : string;
     @Column({length: 1})
     sexo : string;
     @Column()
     edad : string;
-
-
+    //relations
     @ManyToOne(() => ocupationEntity, ocupation => ocupation.usuarios)
     @JoinColumn({referencedColumnName:'idOcupation',name:'idOcupation'})
     ocupacion: ocupationEntity;
     @OneToOne(() => shelterRequest , shelter => shelter.user)
     peticion : shelterRequest
+    @ManyToMany(()=> Pet)
+    @JoinTable({name:'likes'})
+    likes : Pet[];
+
  
     
 }
