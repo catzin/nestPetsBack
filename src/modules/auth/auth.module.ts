@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from 'src/shared/entities/index';
+import { User, ocupationEntity } from 'src/shared/entities/index';
 import { JwtModule } from '@nestjs/jwt';
 import { jwtConstants } from 'src/shared/constants';
 
@@ -11,7 +11,8 @@ import { jwtConstants } from 'src/shared/constants';
   providers: [AuthService],
   imports:[
     TypeOrmModule.forFeature([
-      User
+      User,
+      ocupationEntity
     ]),
     JwtModule.register({
       global:true,

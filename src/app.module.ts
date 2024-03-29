@@ -4,11 +4,13 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AdminUser, Pet, ShelterEntity, User, ocupationEntity, shelterRequest , Quality} from './shared/entities/index';
 import { AuthModule } from './modules/auth/auth.module';
+import { ShelterModule } from './modules/shelter/shelter.module';
 
 
 @Module({
   imports: [
     AuthModule,
+    ShelterModule,
     TypeOrmModule.forRoot({
       type:'mysql',
       host:'localhost',

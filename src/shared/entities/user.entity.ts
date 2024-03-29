@@ -2,7 +2,7 @@ import { Column, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToOne,
 import { ocupationEntity } from "./ocupation.entity";
 import { shelterRequest } from "./shelterRequest.entity";
 import { Pet } from "./pet.entity";
-import { ShelterEntity } from "./shelter.entity";
+
 
 @Entity()
 export class User{
