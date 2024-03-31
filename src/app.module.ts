@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AdminUser, Pet, ShelterEntity, User, ocupationEntity, shelterRequest , Quality} from './shared/entities/index';
 import { AuthModule } from './modules/auth/auth.module';
 import { ShelterModule } from './modules/shelter/shelter.module';
+import { S3Module } from './modules/s3/s3.module';
 
 
 @Module({
@@ -29,7 +30,8 @@ import { ShelterModule } from './modules/shelter/shelter.module';
       ],
       synchronize:true
 
-    })
+    }),
+    S3Module
   ],
   controllers: [AppController],
   providers: [AppService],
