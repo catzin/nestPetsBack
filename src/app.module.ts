@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AdminUser, Pet, ShelterEntity, User, ocupationEntity, shelterRequest , Quality} from './shared/entities/index';
 import { AuthModule } from './modules/auth/auth.module';
+import { S3Module } from './modules/s3/s3.module';
 
 
 @Module({
@@ -27,7 +28,8 @@ import { AuthModule } from './modules/auth/auth.module';
       ],
       synchronize:true
 
-    })
+    }),
+    S3Module
   ],
   controllers: [AppController],
   providers: [AppService],
