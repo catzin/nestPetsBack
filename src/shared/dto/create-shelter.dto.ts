@@ -1,4 +1,4 @@
-import { IsString } from "class-validator";
+import { IsOptional, IsString } from "class-validator";
 import { CreateDateColumn } from "typeorm";
 
 export class createShleterDTO{
@@ -10,8 +10,14 @@ export class createShleterDTO{
     @IsString()
     usuarioId: string;
 
+    @IsString()
+    @IsOptional()
     faceLink: string;
+    @IsString()
+    @IsOptional()
     instaLink: string;
+    @IsString()
+    @IsOptional()
     webLink: string;
 
 

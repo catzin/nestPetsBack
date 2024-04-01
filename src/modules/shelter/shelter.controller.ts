@@ -11,12 +11,11 @@ export class ShelterController {
     async createShelter(@Body() data : createShleterDTO){
         try{
 
-            await this.shelterService.createShelter(data)
+            const shelter = await this.shelterService.createShelter(data);
+            return shelter;
 
         }catch(err){
-
+            return err;
         }
-        return 'create works'
     }
-
 }

@@ -24,8 +24,8 @@ export class User{
     fechaNacimiento : string;
     @Column({length: 1})
     sexo : string;
-    @Column()
-    edad : string;
+    @Column({type:'int'})
+    edad : number;
     //relations
     @ManyToOne(() => ocupationEntity, ocupation => ocupation.usuarios)
     @JoinColumn({referencedColumnName:'idOcupation',name:'idOcupation'})

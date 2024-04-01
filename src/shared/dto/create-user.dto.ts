@@ -1,4 +1,4 @@
-import { IsEmail, IsInt, IsString } from "class-validator";
+import { IsEmail, IsInt, IsNumber, IsString } from "class-validator";
 
 
 export class createUserDTO{
@@ -20,8 +20,8 @@ export class createUserDTO{
     sexo : string;
     @IsInt()
     idOcupation :number;
-    @IsString()
-    edad : string;
+    @IsNumber()
+    edad : number;
 
 
 
